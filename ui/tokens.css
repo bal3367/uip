@@ -1,0 +1,777 @@
+/* ============================================
+   TRADING JOURNAL — Design Tokens
+   Bold fintech-native / terminal aesthetic
+   ============================================ */
+
+:root {
+  /* ---------- DARK (default) ---------- */
+  --bg-0: #070809;           /* app void */
+  --bg-1: #0E1013;           /* panel */
+  --bg-2: #14171C;           /* raised panel */
+  --bg-3: #1A1E24;           /* hover / selected row */
+  --bg-4: #22262E;           /* chip bg */
+
+  --line-1: #1E232B;         /* subtle hairline */
+  --line-2: #2A313B;         /* stronger divider */
+  --line-3: #3A4250;         /* input border */
+
+  --ink-0: #F4F6F8;          /* highest contrast text */
+  --ink-1: #C7CCD4;          /* body */
+  --ink-2: #8C94A3;          /* secondary */
+  --ink-3: #5B6270;          /* tertiary / placeholder */
+  --ink-4: #3A4048;          /* disabled */
+
+  --pos: #00D563;            /* profit / long */
+  --pos-bg: rgba(0, 213, 99, 0.10);
+  --pos-dim: #0A7A3A;
+  --neg: #FF3B4B;            /* loss / short */
+  --neg-bg: rgba(255, 59, 75, 0.10);
+  --neg-dim: #8A2028;
+  --warn: #FFB020;           /* warn / pending */
+  --warn-bg: rgba(255, 176, 32, 0.10);
+  --info: #00E5FF;           /* interactive accent — teal */
+  --info-bg: rgba(0, 229, 255, 0.08);
+  --violet: #B388FF;
+  --magenta: #FF00AA;        /* cyberpunk secondary */
+  --magenta-bg: rgba(255, 0, 170, 0.10);
+  --magenta-dim: #8A005C;
+
+  --accent: var(--info);
+  --accent-ink: #00121A;
+
+  /* Type */
+  --ff-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --ff-sans: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+  --ff-serif: 'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  --ff-display: 'Antonio', 'Oswald', 'Impact', 'Arial Narrow', sans-serif;
+  --ff-jp: 'Zen Kaku Gothic New', 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+  --fs-9: 9px;
+  --fs-10: 10px;
+  --fs-11: 11px;
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-15: 15px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-20: 20px;
+  --fs-24: 24px;
+  --fs-28: 28px;
+  --fs-36: 36px;
+  --fs-48: 48px;
+  --fs-64: 64px;
+
+  --lh-tight: 1.08;
+  --lh-snug: 1.25;
+  --lh-body: 1.5;
+
+  /* Spacing (4px base) */
+  --s-1: 2px;
+  --s-2: 4px;
+  --s-3: 6px;
+  --s-4: 8px;
+  --s-5: 10px;
+  --s-6: 12px;
+  --s-7: 14px;
+  --s-8: 16px;
+  --s-10: 20px;
+  --s-12: 24px;
+  --s-16: 32px;
+  --s-20: 40px;
+  --s-24: 48px;
+
+  /* Density knob */
+  --row-h: 32px;
+  --panel-pad: 16px;
+
+  /* Radii — small, sharp */
+  --r-0: 0px;
+  --r-1: 2px;
+  --r-2: 4px;
+  --r-3: 6px;
+  --r-pill: 999px;
+
+  /* Elevation (very subtle on dark) */
+  --sh-1: 0 1px 0 rgba(255,255,255,0.02) inset, 0 1px 2px rgba(0,0,0,0.35);
+  --sh-2: 0 10px 30px rgba(0,0,0,0.55);
+  --glow-accent: 0 0 0 1px rgba(0,229,255,0.35), 0 0 24px rgba(0,229,255,0.18);
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.6,.2,1);
+  --dur-1: 120ms;
+  --dur-2: 240ms;
+
+  /* Chart */
+  --grid: rgba(255,255,255,0.04);
+}
+
+/* ---------- LIGHT ---------- */
+[data-theme="light"] {
+  --bg-0: #F6F7F8;
+  --bg-1: #FFFFFF;
+  --bg-2: #F1F3F5;
+  --bg-3: #E8EBEE;
+  --bg-4: #DEE2E6;
+
+  --line-1: #E6E9EC;
+  --line-2: #D4D9DE;
+  --line-3: #BAC0C7;
+
+  --ink-0: #0A0C0F;
+  --ink-1: #1C2128;
+  --ink-2: #4E545D;
+  --ink-3: #7A828D;
+  --ink-4: #B2B9C2;
+
+  --pos: #008A3E;
+  --pos-bg: rgba(0, 138, 62, 0.10);
+  --pos-dim: #00512A;
+  --neg: #D4001B;
+  --neg-bg: rgba(212, 0, 27, 0.08);
+  --neg-dim: #7A0010;
+  --warn: #B87300;
+  --warn-bg: rgba(184, 115, 0, 0.10);
+  --info: #0070D4;
+  --info-bg: rgba(0, 112, 212, 0.08);
+
+  --accent: var(--info);
+  --accent-ink: #FFFFFF;
+
+  --grid: rgba(0,0,0,0.05);
+
+  --sh-1: 0 1px 0 rgba(0,0,0,0.02), 0 1px 3px rgba(0,0,0,0.06);
+  --sh-2: 0 12px 32px rgba(0,0,0,0.10);
+  --glow-accent: 0 0 0 2px rgba(0,112,212,0.18);
+}
+
+/* Density variants */
+[data-density="compact"] {
+  --row-h: 26px;
+  --panel-pad: 10px;
+}
+[data-density="comfortable"] {
+  --row-h: 40px;
+  --panel-pad: 22px;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; }
+body {
+  margin: 0;
+  background-color: var(--bg-0);
+  background-image:
+    radial-gradient(ellipse 65vw 55vh at 80% 15%, rgba(255, 0, 170, 0.45), transparent 65%),
+    radial-gradient(ellipse 60vw 50vh at 15% 85%, rgba(0, 229, 255, 0.45), transparent 65%),
+    radial-gradient(ellipse 45vw 45vh at 50% 50%, rgba(179, 136, 255, 0.16), transparent 70%),
+    linear-gradient(rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(255, 0, 170, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 170, 0.09) 1px, transparent 1px);
+  background-size: auto, auto, auto, 16px 16px, 16px 16px, 96px 96px, 96px 96px;
+  background-attachment: fixed;
+  color: var(--ink-1);
+  font-family: var(--ff-sans);
+  font-size: var(--fs-13);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11", "tnum";
+  position: relative;
+}
+
+/* ============================================
+   AMBIENT CYBERPUNK BACKGROUND
+   Layered: city grid + magenta/teal glow + noise
+   Sits behind everything via body::before
+   ============================================ */
+/* ============================================
+   Ambient now painted on body{} directly for
+   robust cross-renderer capture. Pseudo kept empty.
+   ============================================ */
+body::before { content: none; }
+
+@keyframes bg-drift {
+  0%   { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+  100% { background-position: 0 0, 0 0, 0 0, 96px 96px, 96px 96px, 96px 96px, 96px 96px, 0 0; }
+}
+
+/* Diagonal sweeping vignette — very low opacity scanning light + scan lines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3px,
+      rgba(255, 255, 255, 0.013) 3px,
+      rgba(255, 255, 255, 0.013) 4px
+    ),
+    linear-gradient(
+      115deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(0, 229, 255, 0.04) 48%,
+      rgba(255, 0, 170, 0.04) 52%,
+      transparent 65%,
+      transparent 100%
+    );
+  background-size: auto, 300% 100%;
+  animation: sweep 18s ease-in-out infinite;
+}
+
+@keyframes sweep {
+  0%, 100% { background-position: 0% 0; }
+  50%      { background-position: 100% 0; }
+}
+
+/* Light mode: softer, warmer ambient */
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse 80vw 60vh at 85% -5%, rgba(255, 0, 170, 0.06), transparent 55%),
+    radial-gradient(ellipse 70vw 50vh at 15% 105%, rgba(0, 112, 212, 0.08), transparent 55%),
+    linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+    var(--bg-0);
+  background-size: auto, auto, 16px 16px, 16px 16px, auto;
+}
+
+/* Ensure app chrome sits above ambient bg */
+#app { position: relative; z-index: 1; }
+
+/* App shell containers stay opaque so background shows through negative space */
+main { background: transparent !important; }
+
+/* Screen sections — let ambient bg show through with subtle tint
+   Any section with inline background:var(--bg-0) gets overridden */
+section, aside, .screen {
+  background-color: transparent !important;
+}
+/* But panels / explicit bg-1/2/3 stay solid for readability */
+.panel, .panel-body, [data-opaque] {
+  background-color: var(--bg-1) !important;
+}
+/* Add subtle glass effect to panel-ish areas */
+main section, main aside {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.mono { font-family: var(--ff-mono); font-feature-settings: "tnum", "zero"; }
+.serif { font-family: var(--ff-serif); }
+.num { font-family: var(--ff-mono); font-variant-numeric: tabular-nums; }
+.pos { color: var(--pos); }
+.neg { color: var(--neg); }
+.warn { color: var(--warn); }
+.ink-0 { color: var(--ink-0); }
+.ink-1 { color: var(--ink-1); }
+.ink-2 { color: var(--ink-2); }
+.ink-3 { color: var(--ink-3); }
+
+.up::before { content: '▲ '; font-size: 0.8em; }
+.dn::before { content: '▼ '; font-size: 0.8em; }
+
+.label {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-10);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+.label-sm { font-size: var(--fs-9); }
+
+.h-display {
+  font-family: var(--ff-serif);
+  font-weight: 400;
+  font-size: var(--fs-48);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.02em;
+  color: var(--ink-0);
+}
+.h-display em { font-style: italic; color: var(--ink-2); }
+
+.h-1 { font-size: var(--fs-24); font-weight: 500; color: var(--ink-0); letter-spacing: -0.01em; }
+.h-2 { font-size: var(--fs-18); font-weight: 500; color: var(--ink-0); letter-spacing: -0.005em; }
+.h-3 { font-size: var(--fs-14); font-weight: 600; color: var(--ink-0); }
+
+/* ---------- Panel ---------- */
+.panel {
+  background: var(--bg-1);
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-2);
+}
+.panel-pad { padding: var(--panel-pad); }
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-8);
+  padding: var(--s-6) var(--panel-pad);
+  border-bottom: 1px solid var(--line-1);
+  min-height: 40px;
+}
+.panel-head .title {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-11);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-4);
+  height: 28px;
+  padding: 0 var(--s-8);
+  border: 1px solid var(--line-2);
+  background: var(--bg-2);
+  color: var(--ink-0);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-11);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--r-1);
+  cursor: pointer;
+  transition: all var(--dur-1) var(--ease);
+  user-select: none;
+}
+.btn:hover { background: var(--bg-3); border-color: var(--line-3); }
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.btn-primary:hover { filter: brightness(1.1); background: var(--accent); }
+.btn-ghost { background: transparent; border-color: transparent; color: var(--ink-2); }
+.btn-ghost:hover { background: var(--bg-2); color: var(--ink-0); border-color: var(--line-1); }
+.btn-danger { color: var(--neg); border-color: var(--neg-dim); }
+.btn-lg { height: 36px; padding: 0 var(--s-12); font-size: var(--fs-12); }
+.btn-sm { height: 22px; padding: 0 var(--s-6); font-size: var(--fs-10); }
+.btn-icon { width: 28px; padding: 0; justify-content: center; }
+
+/* ---------- Pill / tag ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-3);
+  height: 18px;
+  padding: 0 var(--s-5);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-10);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--bg-4);
+  color: var(--ink-1);
+  border-radius: var(--r-1);
+  font-weight: 500;
+}
+.pill.pos { background: var(--pos-bg); color: var(--pos); }
+.pill.neg { background: var(--neg-bg); color: var(--neg); }
+.pill.warn { background: var(--warn-bg); color: var(--warn); }
+.pill.info { background: var(--info-bg); color: var(--info); }
+.pill .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 2px currentColor;
+  opacity: .9;
+}
+.dot-live { animation: pulse 1.6s ease-in-out infinite; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ---------- Input ---------- */
+.input, .select, .textarea {
+  background: var(--bg-2);
+  border: 1px solid var(--line-2);
+  color: var(--ink-0);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-12);
+  padding: 0 var(--s-8);
+  height: 32px;
+  border-radius: var(--r-1);
+  outline: none;
+  transition: all var(--dur-1) var(--ease);
+  width: 100%;
+}
+.textarea {
+  padding: var(--s-8);
+  height: auto;
+  min-height: 80px;
+  font-family: var(--ff-sans);
+  font-size: var(--fs-13);
+  line-height: 1.5;
+  resize: vertical;
+}
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.input::placeholder, .textarea::placeholder { color: var(--ink-3); }
+
+/* Segmented control */
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-1);
+  background: var(--bg-2);
+  padding: 2px;
+  gap: 2px;
+}
+.seg button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--ink-2);
+  font-family: var(--ff-mono);
+  font-size: var(--fs-10);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: var(--r-1);
+  transition: all var(--dur-1) var(--ease);
+}
+.seg button.active {
+  background: var(--bg-4);
+  color: var(--ink-0);
+}
+
+/* ---------- Table ---------- */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-12);
+}
+.tbl th {
+  text-align: left;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-10);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 500;
+  padding: var(--s-5) var(--s-8);
+  border-bottom: 1px solid var(--line-1);
+  background: var(--bg-1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  white-space: nowrap;
+}
+.tbl td {
+  padding: var(--s-5) var(--s-8);
+  border-bottom: 1px solid var(--line-1);
+  height: var(--row-h);
+  vertical-align: middle;
+  color: var(--ink-1);
+}
+.tbl tbody tr { transition: background var(--dur-1) var(--ease); }
+.tbl tbody tr:hover { background: var(--bg-2); cursor: pointer; }
+.tbl tbody tr.sel { background: var(--bg-3); }
+.tbl .num, .tbl td.num { text-align: right; }
+.tbl .num { font-family: var(--ff-mono); font-variant-numeric: tabular-nums; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: var(--r-pill); }
+::-webkit-scrollbar-thumb:hover { background: var(--line-3); }
+
+/* Utility */
+.row { display: flex; align-items: center; }
+.col { display: flex; flex-direction: column; }
+.gap-2 { gap: var(--s-2); } .gap-3 { gap: var(--s-3); }
+.gap-4 { gap: var(--s-4); } .gap-6 { gap: var(--s-6); }
+.gap-8 { gap: var(--s-8); } .gap-12 { gap: var(--s-12); } .gap-16 { gap: var(--s-16); }
+.grow { flex: 1; } .shrink-0 { flex-shrink: 0; }
+.between { justify-content: space-between; }
+.center { justify-content: center; align-items: center; }
+.end { justify-content: flex-end; }
+.wrap { flex-wrap: wrap; }
+
+/* Ticker */
+.ticker {
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--line-1);
+  background: var(--bg-1);
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: flex;
+  gap: var(--s-16);
+  padding-left: var(--s-8);
+  animation: ticker 80s linear infinite;
+  white-space: nowrap;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex;
+  gap: var(--s-4);
+  align-items: center;
+  font-family: var(--ff-mono);
+  font-size: var(--fs-11);
+  color: var(--ink-2);
+}
+.ticker-item .sym { color: var(--ink-0); font-weight: 500; letter-spacing: 0.04em; }
+
+/* Bar series (equity curve style) */
+.spark-wrap { position: relative; width: 100%; height: 100%; }
+.spark-wrap svg { display: block; width: 100%; height: 100%; overflow: visible; }
+
+/* Soft divider between cells */
+.vr { width: 1px; align-self: stretch; background: var(--line-1); }
+.hr { height: 1px; width: 100%; background: var(--line-1); }
+
+/* Selection */
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+/* Focus rings for a11y */
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+
+/* Kbd */
+kbd {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-10);
+  background: var(--bg-3);
+  border: 1px solid var(--line-2);
+  border-bottom-width: 2px;
+  padding: 1px 5px;
+  border-radius: var(--r-1);
+  color: var(--ink-1);
+}
+
+/* Bot status dot with glow */
+.status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  display: inline-block; flex-shrink: 0;
+}
+.status-dot.live { background: var(--pos); box-shadow: 0 0 0 3px var(--pos-bg), 0 0 8px var(--pos); }
+.status-dot.paper { background: var(--info); box-shadow: 0 0 0 3px var(--info-bg); }
+.status-dot.paused { background: var(--warn); box-shadow: 0 0 0 3px var(--warn-bg); }
+.status-dot.off { background: var(--ink-4); }
+.status-dot.error { background: var(--neg); box-shadow: 0 0 0 3px var(--neg-bg); animation: pulse 1s infinite; }
+
+/* Dense grid lines helper */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ============================================
+   CYBERPUNK / GHOST IN THE SHELL ACCENTS
+   ============================================ */
+
+/* Display type — Eva-style condensed bold */
+.h-display-jp {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--ink-0);
+}
+.h-display-jp em {
+  font-style: normal;
+  color: var(--accent);
+  font-family: var(--ff-display);
+}
+
+.display-cond {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Japanese katakana label — small accent text */
+.jp {
+  font-family: var(--ff-jp);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.jp-sm {
+  font-family: var(--ff-jp);
+  font-size: 10px;
+  color: var(--ink-3);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* City-grid background — for hero / login / empty states */
+.city-grid {
+  position: relative;
+  background-color: var(--bg-0);
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(rgba(255, 0, 170, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 0, 170, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px, 64px 64px, 16px 16px, 16px 16px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
+}
+.city-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 80% 20%, rgba(255, 0, 170, 0.08), transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(0, 229, 255, 0.10), transparent 50%);
+  pointer-events: none;
+}
+
+/* Scan-line overlay — subtle CRT flicker */
+.scan-lines {
+  position: relative;
+}
+.scan-lines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    rgba(0, 229, 255, 0.025) 2px,
+    rgba(0, 229, 255, 0.025) 3px
+  );
+  pointer-events: none;
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+
+/* Global ambient scan lines — now baked into body::after sweep instead.
+   Kept as a no-op for back-compat. */
+body.scan-on { /* reserved */ }
+
+/* Glitch text effect */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.85;
+  pointer-events: none;
+}
+.glitch::before {
+  color: var(--magenta);
+  transform: translate(-1px, 0);
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+.glitch::after {
+  color: var(--info);
+  transform: translate(1px, 0);
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+/* Corner brackets — HUD frame */
+.hud-frame {
+  position: relative;
+}
+.hud-frame::before,
+.hud-frame::after,
+.hud-frame > .hud-bl,
+.hud-frame > .hud-br {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--accent);
+}
+.hud-frame::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.hud-frame::after  { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
+.hud-frame > .hud-bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
+.hud-frame > .hud-br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+/* Magenta accent utility classes */
+.mag { color: var(--magenta); }
+.bg-mag { background: var(--magenta-bg); color: var(--magenta); }
+
+/* Hazard stripe — corner ornament */
+.hazard-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent) 0,
+    var(--accent) 6px,
+    var(--bg-0) 6px,
+    var(--bg-0) 12px
+  );
+  height: 4px;
+}
+.hazard-stripe.mag {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--magenta) 0,
+    var(--magenta) 6px,
+    var(--bg-0) 6px,
+    var(--bg-0) 12px
+  );
+}
+
+/* Section eyebrow with katakana */
+.eyebrow-jp {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.eyebrow-jp .en {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.eyebrow-jp .jp {
+  font-family: var(--ff-jp);
+  font-size: 10px;
+  color: var(--magenta);
+  letter-spacing: 0.08em;
+}
+.eyebrow-jp .bar {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--line-2), transparent);
+}
+
+/* Editorial serif number for big display */
+.big-num {
+  font-family: var(--ff-mono);
+  font-size: var(--fs-36);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink-0);
+  font-variant-numeric: tabular-nums;
+}
+.big-num.pos { color: var(--pos); }
+.big-num.neg { color: var(--neg); }
